@@ -7,5 +7,14 @@ module.exports = {
     '@storybook/preset-create-react-app',
     '@storybook/addon-knobs',
     '@invisionapp/dsm-storybook'
-  ]
+  ],
+  typescript: {
+     check: false,
+     checkOptions: {},
+     reactDocgen: false,
+     reactDocgenTypescriptOptions: {
+        shouldExtractLiteralValuesFromEnum: true,
+        propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
+     },
+  },
 };
