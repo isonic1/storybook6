@@ -30,5 +30,7 @@ jobs:
        with:
          node-version: '14.x'
      - run: npm ci
+     - name: Run Build
+       run: npx build-storybook 
      - name: Run Tests
-       run: npx build-storybook
+       run: npx eyes-storybook --conf applitools.config.js
